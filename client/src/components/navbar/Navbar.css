@@ -1,0 +1,26 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.logo {
+  width: 80px;
+  object-fit: contain;
+}
+
+.avatar {
+  width: 30px;
+  object-fit: contain;
+}
+.sticky {
+  background-color: #111;
+}
+@media (max-width: 800px) {
+}
