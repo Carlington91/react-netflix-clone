@@ -8,7 +8,7 @@ const Banner = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.post('/movies/banner', {
+      const res = await axios.post('/api/v1/movies/banner', {
         url: request.fetchNetFlixOriginals,
       });
       let random = Math.floor(Math.random() * res.data.length - 1);

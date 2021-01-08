@@ -9,7 +9,7 @@ const Rows = ({ title, fetchUrl, isPosterPath }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.post('/movies', { url: fetchUrl });
+      const res = await axios.post('/api/v1/movies', { url: fetchUrl });
       setMovies(res.data);
     };
 
@@ -26,7 +26,7 @@ const Rows = ({ title, fetchUrl, isPosterPath }) => {
         const url = `/${movie.media_type === 'movie' ? 'movie' : 'tv'}/${
           movie.id
         }/videos`;
-        const res = await axios.post('/movies/trailer', { url });
+        const res = await axios.post('/api/v1/movies/trailer', { url });
         console.log(res.data);
         if (res.data) {
           setTrailerId(res?.data[0]?.key);
