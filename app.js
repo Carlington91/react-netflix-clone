@@ -12,12 +12,12 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 //autoload routes
-// fs.readdirSync('./routes').map((router) => {
-//   const route = router.split('.')[0];
-//   app.use('/api/v1/' + route, require('./routes/' + router));
-// });
+fs.readdirSync('./routes').map((router) => {
+  const route = router.split('.')[0];
+  app.use('/api/v1/' + route, require('./routes/' + router));
+});
 
-app.use('/api/v1/movies', require('./routes/movies'));
+// app.use('/api/v1/movies', require('./routes/movies'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

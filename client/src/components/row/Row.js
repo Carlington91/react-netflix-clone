@@ -16,8 +16,6 @@ const Rows = ({ title, fetchUrl, isPosterPath }) => {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(isOpen);
-
   const handleClick = (movie) => async () => {
     if (trailerId && isOpen === movie.id) {
       setTrailerId('');
