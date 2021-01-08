@@ -29,13 +29,13 @@ exports.movies = async (req, res) => {
 exports.banner = async (req, res) => {
   try {
     const url = req.body.url;
-    const resp = await axios.get(
-      `https://api.themoviedb.org/3${url}?api_key=${process.env.API_KEY}`,
+    const data = await fetchExternalData(
+      `${url}?api_key=${process.env.API_KEY}`,
     );
-    if (!resp.data.results) {
+    if (!data) {
       return res.status(404).json({ error: 'No data found' });
     }
-    res.status(200).json(resp.data.results);
+    res.status(200).json(data);
   } catch (error) {
     res.status(400).json(error);
   }
