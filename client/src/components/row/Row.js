@@ -25,7 +25,7 @@ const Rows = ({ title, fetchUrl, isPosterPath }) => {
           movie.id
         }/videos`;
         const res = await axios.post('/api/v1/movies/trailer', { url });
-        console.log(res.data);
+
         if (res.data) {
           setTrailerId(res?.data[0]?.key);
           setIsOpen(movie.id);
